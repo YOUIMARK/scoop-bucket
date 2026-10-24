@@ -17,7 +17,8 @@ scoop install wslcontainerdesktop
 
 ### wslcontainerdesktop
 
-- **为什么需要管理员**：上游用自签证书签名 MSIX，安装必须先 `Import-Certificate` 到 `Cert:\LocalMachine\TrustedPeople`，再 `Add-AppxPackage` 侧载。请以管理员身份打开 PowerShell 或 Windows 终端后执行安装/升级。
+- **为什么需要管理员**：上游用自签证书签名 MSIX，安装必须先 `Import-Certificate` 到 `Cert:\LocalMachine\TrustedPeople`，再 `Add-AppxPackage` 侧载。**只有首次安装需要提权**，证书进信任库之后 `scoop update` 在普通终端即可完成。
+- **为什么不能像 `extras/chatgpt.json` 那样解包直跑**：ChatGPT 是纯 Win32，可以「解压 MSIX 直接运行 exe」。本软件不行 —— 实测把 msix 解开直接跑会在启动瞬间崩溃（`0xC000027B`），日志里是 `App.OnLaunched → ContainersViewModel.TempRoot → ApplicationData.Current` 抛 `InvalidOperationException`（缺少 MSIX 包标识），所以必须真正侧载。
 - **证书副作用**：该发布者证书（`CN=Michael Hacker`）会进入本机「受信任人」存储，意味着同一证书签名的其他包也可无提示侧载；`scoop uninstall` 会移除它。
 - **数据放哪**：应用把配置写在 `%LOCALAPPDATA%\WslContainerDesktop`，打包后实际落在 `%LOCALAPPDATA%\Packages\<包族名>\LocalCache\Local\WslContainerDesktop`。安装时会把该目录用 junction 指向 Scoop 的 persist 目录（默认 `C:\Scoop\persist\wslcontainerdesktop\data`），卸载后数据仍在。
 - **改数据位置**：在安装/升级**之前**设置环境变量。
