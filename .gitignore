@@ -1,3 +1,9 @@
+# 官方模板（ScoopInstaller/BucketTemplate）
+*.sublime-workspace
+._*
+page.html
+checkver-*.html
+
 # 系统
 .DS_Store
 Thumbs.db
