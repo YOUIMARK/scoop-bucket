@@ -1,0 +1,35 @@
+{
+    "version": "0.50.0",
+    "description": "Single-user, local-first personal media system with metadata scraping, library management and browser access",
+    "homepage": "https://peach.video",
+    "license": "AGPL-3.0-only",
+    "notes": [
+        "Data (config, database, cache) is stored in %LOCALAPPDATA%\\Peach\\peach-data, outside the app directory; upgrading or uninstalling this package keeps it.",
+        "Upgrade with 'scoop update peach'. The built-in updater rewrites files managed by Scoop, so turn off automatic update downloads in Settings > App and Maintenance."
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://downloads.peach.video/v0.50.0/Peach-0.50.0-windows-x64.zip",
+            "hash": "ad1629c04254acdd45957c5fda66e332c497056595b9dc3ced408be512c0a030"
+        }
+    },
+    "extract_dir": "Peach",
+    "shortcuts": [
+        [
+            "Peach.exe",
+            "Peach"
+        ]
+    ],
+    "checkver": {
+        "url": "https://gitgud.io/api/v4/projects/peach-mitao%2Fpeach/releases?per_page=1",
+        "jp": "$[0].tag_name",
+        "regex": "v([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://downloads.peach.video/v$version/Peach-$version-windows-x64.zip"
+            }
+        }
+    }
+}
