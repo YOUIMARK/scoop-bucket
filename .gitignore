@@ -1,37 +1,7 @@
-# 官方模板（ScoopInstaller/BucketTemplate）
-*.sublime-workspace
-._*
-page.html
-checkver-*.html
-
-# 系统
-.DS_Store
-Thumbs.db
-*.swp
-*.swo
 *~
-.vscode/
-.idea/
-
-# 开发工具
-.claude/
-.opencode/
-.agents/
-.dsh/
-.mimosa/
-.zcode/
-AGENTS.md
-CLAUDE.md
-
-# 文档
-docs/
-references/
-
-# 临时文件
-__pycache__/
-*.pyc
-
-# 机密/本地环境
-.env
-.env.*
-!.env.example
+._*
+/checkver*
+.idea
+*.iml
+.vscode
+.claude/settings.local.json
