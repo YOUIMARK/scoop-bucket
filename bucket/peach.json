@@ -21,7 +21,7 @@
         ]
     ],
     "checkver": {
-        "url": "https://gitgud.io/api/v4/projects/peach-mitao%2Fpeach/releases?per_page=1",
+        "url": "https://gitgud.io/api/v4/projects/peach-mitao%2Fpeach/releases",
         "jp": "$[0].tag_name",
         "regex": "v([\\d.]+)"
     },
