@@ -4,7 +4,7 @@
     "homepage": "https://peach.video",
     "license": "AGPL-3.0-only",
     "notes": [
-        "Data (config, database, cache) lives in the persist folder and is linked to %LOCALAPPDATA%\\Peach, so upgrading or reinstalling this package keeps it.",
+        "Data (config, database, cache) lives in the persist folder (peach-data) and is linked to %LOCALAPPDATA%\\Peach, so upgrading or reinstalling this package keeps it.",
         "'scoop uninstall peach' keeps the data; add -p to remove it together with the link.",
         "Upgrade with 'scoop update peach'. The built-in updater rewrites files managed by Scoop, so turn off automatic update downloads in Settings > App and Maintenance."
     ],
@@ -24,7 +24,7 @@
     "installer": {
         "script": [
             "$link = Join-Path $env:LOCALAPPDATA 'Peach'",
-            "$target = Join-Path $persist_dir 'Peach'",
+            "$target = $persist_dir",
             "$item = Get-Item -LiteralPath $link -Force -ErrorAction SilentlyContinue",
             "if ($item -and $item.LinkType -ne 'Junction') {",
             "    Write-Host \"$link is a real folder, not a Scoop link; leaving it untouched.\" -ForegroundColor Yellow",
@@ -40,7 +40,7 @@
             "$link = Join-Path $env:LOCALAPPDATA 'Peach'",
             "$item = Get-Item -LiteralPath $link -Force -ErrorAction SilentlyContinue",
             "if (-not $item -or $item.LinkType -ne 'Junction') { return }",
-            "$target = Join-Path $persist_dir 'Peach'",
+            "$target = $persist_dir",
             "$purgeVar = Get-Variable -Name purge -ErrorAction SilentlyContinue",
             "if (($purgeVar -and $purgeVar.Value) -or -not (Test-Path -LiteralPath $target)) {",
             "    [System.IO.Directory]::Delete($link)",
