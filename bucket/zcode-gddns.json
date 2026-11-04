@@ -1,10 +1,10 @@
 {
     "version": "3.17.1.202611041440",
-    "description": "An unofficial community-patched build of the ZCode AI coding desktop client.",
+    "description": "An unofficial community-patched build of the ZCode AI coding desktop client by GDDNS.",
     "homepage": "https://zcode.z.ai/",
     "license": "Apache-2.0",
     "notes": [
-        "This is an unofficial community-patched build published by GDDNS (https://www.gddns.org/).",
+        "This is an unofficial build patched and published by GDDNS (https://www.gddns.org/).",
         "The installer is not digitally signed."
     ],
     "architecture": {
@@ -20,7 +20,7 @@
     "shortcuts": [
         [
             "ZCode.exe",
-            "ZCode Patched"
+            "ZCode GDDNS"
         ]
     ],
     "checkver": {
