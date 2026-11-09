@@ -1,12 +1,12 @@
 {
-    "version": "1.10.0",
+    "version": "1.11.1",
     "description": "An open-source desktop client for Hongguo short dramas.",
     "homepage": "https://github.com/zfdang/hongguo-open-player",
     "license": "AGPL-3.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/zfdang/hongguo-open-player/releases/download/v1.10.0/hongguo-open-player-1.10.0-win-x64.zip",
-            "hash": "cbed0e6e87f051a8c1dceeb123fc7be0f6489ac6905211920f8b4ab14d3f2ba1"
+            "url": "https://github.com/zfdang/hongguo-open-player/releases/download/v1.11.1/hongguo-open-player-1.11.1-win-x64.zip",
+            "hash": "62dc54deccdc58647969d4aca918936efb18ebc05f658892daf5f253d90ab895"
         }
     },
     "shortcuts": [
