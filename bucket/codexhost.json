@@ -1,0 +1,52 @@
+{
+    "version": "0.19.0",
+    "description": "Run Claude Code, Pi, Grok and other AI coding agents inside Codex Desktop, with the same diff review, forks and approvals.",
+    "homepage": "https://github.com/BytePioneer-AI/codex-host",
+    "license": "LGPL-3.0-only",
+    "notes": [
+        "The Windows build is not digitally signed.",
+        "The official Codex Desktop app is required. Run 'codexhost' to start it, or 'codexhost web' to use it from another device.",
+        "Use 'scoop update codexhost' rather than 'codexhost update'.",
+        "CodexHost stores its data in %USERPROFILE%\\.codexhost, which 'scoop uninstall --purge' does not remove.",
+        "CodexHost registers an autostart entry when it runs; run 'codexhost autostart off' before uninstalling."
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/BytePioneer-AI/codex-host/releases/download/v0.19.0/codexhost-0.19.0-windows-x64.exe",
+            "hash": "97cc1920ad31873b02358c885365444e5420acde9d9301029c317eef04c1f440"
+        },
+        "arm64": {
+            "url": "https://github.com/BytePioneer-AI/codex-host/releases/download/v0.19.0/codexhost-0.19.0-windows-arm64.exe",
+            "hash": "9fec0aabc89e442ad8cb5bdde2f08be261e60f3fe4f28967a498841dce3a5570"
+        }
+    },
+    "innosetup": true,
+    "bin": "bin\\codexhost.exe",
+    "shortcuts": [
+        [
+            "bin\\codexhost-start.exe",
+            "codexhost"
+        ],
+        [
+            "bin\\codexhost-start.exe",
+            "codexhost console",
+            "--console"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/BytePioneer-AI/codex-host"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/BytePioneer-AI/codex-host/releases/download/v$version/codexhost-$version-windows-x64.exe"
+            },
+            "arm64": {
+                "url": "https://github.com/BytePioneer-AI/codex-host/releases/download/v$version/codexhost-$version-windows-arm64.exe"
+            }
+        },
+        "hash": {
+            "mode": "github"
+        }
+    }
+}
