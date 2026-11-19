@@ -9,9 +9,10 @@
             "hash": "9e2eab726bfacc00b365da7c60f82c18ed46b6ad18135d3c1daecb3662e42267"
         }
     },
+    "extract_dir": "AvPlay",
     "shortcuts": [
         [
-            "AvPlay/AvPlay.exe",
+            "AvPlay.exe",
             "AvPlay"
         ]
     ],
