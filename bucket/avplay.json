@@ -1,0 +1,31 @@
+{
+    "version": "2.2.2",
+    "description": "A desktop client for browsing and watching videos from JavRocket.",
+    "homepage": "https://www.javrocket.top/",
+    "license": "Proprietary",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/anonymousjav/AvPlayRelease/releases/download/v2.2.2/AvPlay-2.2.2-windows-x64.zip",
+            "hash": "9e2eab726bfacc00b365da7c60f82c18ed46b6ad18135d3c1daecb3662e42267"
+        }
+    },
+    "shortcuts": [
+        [
+            "AvPlay/AvPlay.exe",
+            "AvPlay"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/anonymousjav/AvPlayRelease"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/anonymousjav/AvPlayRelease/releases/download/v$version/AvPlay-$version-windows-x64.zip"
+            }
+        },
+        "hash": {
+            "mode": "github"
+        }
+    }
+}
