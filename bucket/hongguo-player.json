@@ -1,5 +1,5 @@
 {
-    "version": "1.2.29",
+    "version": "1.2.31",
     "description": "A desktop client for watching Hongguo short dramas.",
     "homepage": "https://github.com/yangbin1322/hongguo-player",
     "license": "Freeware",
@@ -9,8 +9,8 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/yangbin1322/hongguo-player/releases/download/v1.2.29/hongguo-v1.2.29-windows-amd64.zip",
-            "hash": "011429f7bc31dfcd8f551bba15ba917c16fdbf9d31f7d8c9bfa12956b88a3047"
+            "url": "https://github.com/yangbin1322/hongguo-player/releases/download/v1.2.31/hongguo-v1.2.31-windows-amd64.zip",
+            "hash": "8279bf46a875bac1bef372e39fee1efc13f0c7491da752b24585f190d1b68918"
         }
     },
     "shortcuts": [
