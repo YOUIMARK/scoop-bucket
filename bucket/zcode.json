@@ -1,0 +1,50 @@
+{
+    "version": "4.0.0",
+    "description": "A full-featured Agentic Development Environment (ADE) built for Long Horizon Tasks, powered by Z.ai.",
+    "homepage": "https://github.com/zai-org/ZCode",
+    "license": {
+        "identifier": "Proprietary",
+        "url": "https://zcode.z.ai/en/terms"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/zai-org/ZCode/releases/download/v4.0.0/ZCode-4.0.0-win-x64.exe#/dl.7z",
+            "hash": "ec616a2b691b571396e4f143f9b35e7e48d95bf58d12d9ded59db9ea6624625b"
+        },
+        "arm64": {
+            "url": "https://github.com/zai-org/ZCode/releases/download/v4.0.0/ZCode-4.0.0-win-arm64.exe#/dl.7z",
+            "hash": "9932ff0c4bd1af67895114a1ffbe775427372537914dc6ad1b87485ed57c6347"
+        }
+    },
+    "installer": {
+        "script": [
+            "Get-Item -Path \"$dir\\`$PLUGINSDIR\\app*.7z\" | Expand-7zipArchive -DestinationPath \"$dir\"",
+            "Remove-Item -Path \"$dir\\`$*\", \"$dir\\Uninstall*\" -Recurse -Force"
+        ]
+    },
+    "post_install": [
+        "# Disable built-in update mechanism to prevent conflicts with Scoop's update management",
+        "$yaml = \"$dir\\resources\\app-update.yml\"",
+        "$content = Get-Content -Path $yaml | Foreach-Object {",
+        "    if ($_.StartsWith('url')) { \"$($_.Replace('url', '# url')) # Disabled by Scoop\" } else { $_ }",
+        "}",
+        "Set-Content $yaml -Value $content -Encoding ascii"
+    ],
+    "shortcuts": [
+        [
+            "ZCode.exe",
+            "ZCode"
+        ]
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/zai-org/ZCode/releases/download/v$version/ZCode-$version-win-x64.exe#/dl.7z"
+            },
+            "arm64": {
+                "url": "https://github.com/zai-org/ZCode/releases/download/v$version/ZCode-$version-win-arm64.exe#/dl.7z"
+            }
+        }
+    }
+}
